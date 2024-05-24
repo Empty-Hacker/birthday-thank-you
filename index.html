@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5d6eb, #d299c2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Adjusted max-width */
+            width: 90%;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0 0 20px;
+            color: #6d214f; /* Purple */
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        #reveal-btn {
+            padding: 15px 30px;
+            background-color: #ff6b6b; /* Red */
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        #reveal-btn:hover {
+            background-color: #ff7e7e; /* Lighter red */
+            transform: scale(1.05);
+        }
+        #thank-you-message {
+            display: none;
+            margin-top: 30px;
+            font-size: 1.3em;
+            color: #444;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .background {
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150%;
+            height: 150%;
+            background: url('https://www.transparenttextures.com/patterns/symphony.png');
+            opacity: 0.15;
+            z-index: -1;
+            animation: rotateBackground 10s linear infinite;
+        }
+        @keyframes rotateBackground {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .wave-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave {
+            position: relative;
+            display: block;
+            width: 200%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: moveWaves 10s linear infinite;
+        }
+        .wave:nth-child(2) {
+            background: rgba(255, 255, 255, 0.2);
+            animation: moveWaves 8s linear infinite;
+        }
+        .wave:nth-child(3) {
+            background: rgba(255, 255, 255, 0.3);
+            animation: moveWaves 6s linear infinite;
+        }
+        @keyframes moveWaves {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        .linkedin-icon {
+            color: #0077b5; /* LinkedIn blue color */
+            font-size: 2em;
+            margin-top: 20px;
+            display: block;
+            text-decoration: none;
+        }
+
+        /* Additional styles for highlighting name */
+        .highlight-name {
+            background-color: #ff6b6b; /* Red */
+            color: #fff;
+            padding: 3px 5px;
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background"></div>
+        <h1>Thank You! 🎉</h1>
+        <p>Your birthday wishes made my day extra special! 🎂🥳</p>
+        <button id="reveal-btn" onclick="revealMessage()">Reveal Special Message</button>
+        <div id="thank-you-message">
+            <p>Thank you so much for the lovely birthday wishes! Your love and support mean the world to me. <br> - <span class="highlight-name">Herish Chaniyara</span> ❤️🙏જય દ્વારકાધીશ🙏❤️</p>
+            <a href="https://www.linkedin.com/in/herish09/" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a> <!-- LinkedIn icon with link -->
+        </div>
+    </div>
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <script>
+        function revealMessage() {
+            document.getElementById('thank-you-message').style.display = 'block';
+            document.getElementById('reveal-btn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
